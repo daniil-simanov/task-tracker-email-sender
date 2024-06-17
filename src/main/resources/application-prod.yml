@@ -1,0 +1,24 @@
+server:
+  port: 8081
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${SMTP_USERNAME}
+    password: ${SMTP_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            trust: smtp.gmail.com
+  kafka:
+    consumer:
+      properties:
+        spring.json.type.mapping: emailDTO:com.dansim.tasktrackeremailsender.dto.EmailDTO
+        value.deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  config:
+    activate:
+      on-profile: prod
