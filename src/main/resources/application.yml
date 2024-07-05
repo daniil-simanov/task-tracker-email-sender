@@ -15,7 +15,6 @@ spring:
           ssl:
             trust: smtp.gmail.com
   kafka:
-    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
     consumer:
       properties:
         spring.json.type.mapping: emailDTO:com.dansim.tasktrackeremailsender.dto.EmailDTO
